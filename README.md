@@ -25,3 +25,5 @@ How to fetch and display API data dynamically
 Handling loading states and fetch errors
 Implementing a theme toggle with animation and accessibility
 Creating a polished, user-friendly front-end experience
+
+Api call from: https://www.weatherapi.com/
