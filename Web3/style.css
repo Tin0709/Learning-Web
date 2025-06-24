@@ -1,0 +1,149 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom right, #dbeafe, #f0f4ff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.weather-app {
+  background: white;
+  padding: 30px 20px;
+  border-radius: 16px;
+  box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
+}
+
+.weather-app h1 {
+  margin-bottom: 20px;
+}
+
+.weather-app input {
+  padding: 10px;
+  width: 70%;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.weather-app button {
+  padding: 10px 16px;
+  margin-left: 10px;
+  margin-top: 10px;
+  background: #4f46e5;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.weather-info {
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+
+/* dark mode */
+
+body.dark {
+  background: #111827;
+  color: #f9fafb;
+}
+
+body.dark .weather-app {
+  background: #1f2937;
+  box-shadow: 0 12px 24px rgba(255,255,255,0.05);
+}
+
+body.dark input,
+body.dark button {
+  background: #374151;
+  color: #f9fafb;
+  border: 1px solid #555;
+}
+
+body.dark .weather-app button {
+  background: #6366f1;
+}
+
+.dark-toggle {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+
+.theme-switch {
+  position: absolute;
+  top: 6%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.theme-switch input {
+  display: none;
+}
+
+.switch-icon {
+  background: #5e5f83;
+  width: 60px;
+  height: 30px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 6px;
+  box-sizing: border-box;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.switch-icon .icon {
+  font-size: 14px;
+  z-index: 1;
+}
+
+.switch-icon .ball {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 26px;
+  height: 26px;
+  background: white;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+  z-index: 0;
+}
+
+/* Move the ball to the right when checked */
+input:checked + .switch-icon .ball {
+  transform: translateX(30px);
+}
+
+input:checked + .switch-icon {
+  background: #4f46e5;
+}
+
+
+
+/* spinner  */
+
+.spinner {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #6366f1;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  margin: 15px auto;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
