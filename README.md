@@ -18,3 +18,10 @@ DOM manipulation and event handling in JavaScript.
 Styling with CSS and Flexbox.
 Using localStorage for data persistence.
 
+____________________________________________________________________
+web3 Case Study - Weather App 
+
+How to fetch and display API data dynamically
+Handling loading states and fetch errors
+Implementing a theme toggle with animation and accessibility
+Creating a polished, user-friendly front-end experience
