@@ -26,6 +26,20 @@ Handling loading states and fetch errors
 Implementing a theme toggle with animation and accessibility
 Creating a polished, user-friendly front-end experience
 
+<<<<<<< HEAD
+____________________________________________________________________
+web4 Case Study - Daily Motivation App 
+
+Structure, elements, layout
+Mobile-friendly layout
+functions, events, randomization
+Load external JSON data
+Error handling, console logging
+File structure, separation of concerns
+Smooth fade-in effect
+=======
+Api call from: https://www.weatherapi.com/
+>>>>>>> e2c821149ce3934c0e192657de00ad6c5fe36f28
 ____________________________________________________________________
 web4 Case Study - Daily Motivation App 
 
