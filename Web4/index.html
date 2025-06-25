@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Daily Motivation</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>🌞 Daily Motivation</h1>
+    <div class="quote-box" id="quote-box">
+      <p id="quote">Loading quote...</p>
+    </div>
+    <div class="buttons">
+      <button onclick="getQuote()">🎲 New Quote</button>
+      <button onclick="saveFavorite()">❤️ Save Favorite</button>
+      <button onclick="toggleDarkMode()">🌓 Toggle Dark Mode</button>
+    </div>
+    <div class="favorites">
+      <h3>Your Favorites</h3>
+      <ul id="favorite-list"></ul>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

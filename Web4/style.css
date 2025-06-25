@@ -1,0 +1,102 @@
+:root {
+  --bg: #f0f8ff;
+  --text: #333;
+  --box: white;
+  --button: #3498db;
+  --button-hover: #2980b9;
+}
+
+body.dark {
+  --bg: #1e1e1e;
+  --text: #f0f0f0;
+  --box: #2b2b2b;
+  --button: #6c63ff;
+  --button-hover: #524dcc;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  transition: background 0.4s, color 0.4s;
+}
+
+.container {
+  max-width: 600px;
+  background-color: var(--box);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  text-align: center;
+  transition: background 0.4s;
+}
+
+.quote-box {
+  margin: 20px 0;
+  font-size: 1.3em;
+  min-height: 60px;
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  background-color: var(--button);
+  color: white;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: var(--button-hover);
+}
+
+.favorites {
+  margin-top: 20px;
+  text-align: left;
+}
+
+#favorite-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#favorite-list li {
+  background-color: var(--box);
+  padding: 8px;
+  margin: 4px 0;
+  border-radius: 6px;
+  font-size: 0.95em;
+  transition: background 0.4s;
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    padding: 20px;
+  }
+
+  .quote-box {
+    font-size: 1.1em;
+  }
+
+  button {
+    width: 100%;
+  }
+}

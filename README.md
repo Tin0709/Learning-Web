@@ -25,3 +25,14 @@ How to fetch and display API data dynamically
 Handling loading states and fetch errors
 Implementing a theme toggle with animation and accessibility
 Creating a polished, user-friendly front-end experience
+
+____________________________________________________________________
+web4 Case Study - Daily Motivation App 
+
+Structure, elements, layout
+Mobile-friendly layout
+functions, events, randomization
+Load external JSON data
+Error handling, console logging
+File structure, separation of concerns
+Smooth fade-in effect
