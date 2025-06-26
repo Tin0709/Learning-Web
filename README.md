@@ -48,3 +48,11 @@ Load external JSON data
 Error handling, console logging
 File structure, separation of concerns
 Smooth fade-in effect
+
+____________________________________________________________________
+web5 Case Study - a cool web
+Animations on scrollStructure a responsive webpage using HTML.
+Style it with CSS using modern design principles (dark mode, cards, layout).
+Add interactivity with JavaScript (theme toggle, scroll-to-top, form handling).
+Organize a multi-section layout: Hero, Features, Testimonials, Contact.
+Enhance user experience with smooth scrolling and responsive design.
