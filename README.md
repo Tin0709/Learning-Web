@@ -56,3 +56,14 @@ Style it with CSS using modern design principles (dark mode, cards, layout).
 Add interactivity with JavaScript (theme toggle, scroll-to-top, form handling).
 Organize a multi-section layout: Hero, Features, Testimonials, Contact.
 Enhance user experience with smooth scrolling and responsive design.
+
+____________________________________________________________________
+web6 Case Study - simple shopping app (react + pure js)
+
+Created a modular UI with components
+Managed state with useState for cart items and modal visibility
+
+Function:
+Added products to the cart with quantity tracking
+Removed specific items
+Calculated and displayed total price
