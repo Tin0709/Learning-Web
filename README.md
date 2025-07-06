@@ -67,3 +67,12 @@ Function:
 Added products to the cart with quantity tracking
 Removed specific items
 Calculated and displayed total price
+
+____________________________________________________________________
+web7 Case Study - Calculator (react + pure js)
+Handling button clicks and updating state based on which button is pressed.
+useState
+custom components
+calculator operations: addition, subtraction, multiplication, division, clear, backspace, and memory functions.
+button clicks and updating state based on which button is pressed.
+
