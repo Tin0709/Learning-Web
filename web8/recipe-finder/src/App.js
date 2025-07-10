@@ -9,11 +9,19 @@ function App() {
   const [recipes, setRecipes] = useState([]);
 
   const fetchRecipes = async (query) => {
-    const res = await fetch(
-      `https://api.edamam.com/search?q=${query}&app_id=YOUR_APP_ID&app_key=YOUR_APP_KEY`
-    );
-    const data = await res.json();
-    setRecipes(data.hits);
+    try {
+      const res = await fetch(
+        `https://www.themealdb.com/api/json/v1/1/search.php?s=${query}`
+      );
+      if (!res.ok) {
+        throw new Error(`HTTP error! status: ${res.status}`);
+      }
+      const data = await res.json();
+      setRecipes(data.meals || []); // fallback if no results
+    } catch (err) {
+      console.error("Failed to fetch recipes:", err);
+      alert("Failed to fetch recipes. Please try again later.");
+    }
   };
 
   return (

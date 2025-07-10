@@ -4,9 +4,9 @@ import RecipeCard from "./RecipeCard";
 const RecipeList = ({ recipes }) => {
   return (
     <div className="recipe-list">
-      {recipes.map((item, index) => (
-        <RecipeCard key={index} recipe={item.recipe} />
-      ))}
+      {recipes?.map((recipe, index) =>
+        recipe ? <RecipeCard key={index} recipe={recipe} /> : null
+      )}
     </div>
   );
 };
