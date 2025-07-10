@@ -113,10 +113,6 @@
   transition: background-color 0.4s ease, color 0.4s ease;
 }
 
-.dark .top-bar {
-  border-bottom: 1px solid #333;
-}
-
 .dark .search-bar input {
   background-color: #2a2a2a;
   border: 2px solid #555;
