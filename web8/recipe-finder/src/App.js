@@ -8,9 +8,12 @@ import RecipeList from "./components/RecipeList";
 function App() {
   const [recipes, setRecipes] = useState([]);
   const [query, setQuery] = useState("");
+  const [darkMode, setDarkMode] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const fetchRecipes = async (q) => {
     try {
+      setLoading(true);
       const res = await fetch(
         `https://www.themealdb.com/api/json/v1/1/search.php?s=${q}`
       );
@@ -22,22 +25,22 @@ function App() {
     } catch (err) {
       console.error("Failed to fetch recipes:", err);
       alert("Failed to fetch recipes. Please try again later.");
+    } finally {
+      setLoading(false);
     }
   };
 
-  const suggestions = [
-    "pasta",
-    "chicken",
-    "salad",
-    "beef",
-    "rice",
-    "soup",
-    "fish",
-  ];
+  const suggestions = ["pasta", "chicken", "pizza", "rice", "soup", "fish"];
 
   return (
-    <div className="App">
-      <h1>Recipe Finder</h1>
+    <div className={`App ${darkMode ? "dark" : ""}`}>
+      <div className="top-bar">
+        <h1>Recipe Finder</h1>
+        <button className="dark-toggle" onClick={() => setDarkMode(!darkMode)}>
+          {darkMode ? "☀️ Light Mode" : "🌙 Dark Mode"}
+        </button>
+      </div>
+
       <SearchBar
         onSearch={() => fetchRecipes(query)}
         value={query}
@@ -52,7 +55,11 @@ function App() {
         ))}
       </div>
 
-      <RecipeList recipes={recipes} />
+      {loading ? (
+        <div className="loader"></div>
+      ) : (
+        <RecipeList recipes={recipes} />
+      )}
     </div>
   );
 }
