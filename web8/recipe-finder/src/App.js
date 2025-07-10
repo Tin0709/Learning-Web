@@ -5,6 +5,8 @@ import React, { useState } from "react";
 import SearchBar from "./components/SearchBar";
 import RecipeList from "./components/RecipeList";
 
+import { useEffect } from "react";
+
 function App() {
   const [recipes, setRecipes] = useState([]);
   const [query, setQuery] = useState("");
@@ -31,6 +33,10 @@ function App() {
   };
 
   const suggestions = ["pasta", "chicken", "pizza", "rice", "soup", "fish"];
+
+  useEffect(() => {
+    document.body.className = darkMode ? "dark" : "";
+  }, [darkMode]);
 
   return (
     <div className={`App ${darkMode ? "dark" : ""}`}>
