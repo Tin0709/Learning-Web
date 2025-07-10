@@ -81,3 +81,27 @@
 .recipe-card a:hover {
   text-decoration: underline;
 }
+
+.suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.suggestions button {
+  padding: 8px 16px;
+  border: 1px solid #3498db;
+  background-color: white;
+  color: #3498db;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 14px;
+}
+
+.suggestions button:hover {
+  background-color: #3498db;
+  color: white;
+}
