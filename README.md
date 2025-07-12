@@ -100,3 +100,19 @@ Fetching Data: Calling an external API (fetchRecipes) and updating UI with the r
 Dynamic Styling: Applying different class names based on the current theme.
 
 UI Enhancements: Adding dark mode, loading indicators, and suggestion buttons to improve user experience.
+
+---
+
+web9 Case Study - Markdown Previewer (react + pure js)
+
+This is a simple and responsive Markdown editor that instantly previews your formatted content. It supports live rendering, syntax help, and dark mode toggle for better readability.
+
+What I Learned From This Project:
+
+    •	JSX and Component Structure: Built a modular React UI using reusable components like MarkdownEditor and MarkdownPreview.
+    •	State Management: Managed user input and UI state (dark mode, guide toggle) using useState.
+    •	Side Effects: Used useEffect to apply dynamic CSS classes for full-page dark mode.
+    •	Event Handling: Handled user interactions such as input changes and button clicks.
+    •	Props & Controlled Components: Passed and synced state between parent and child components.
+    •	Third-party Integration: Used the marked library to parse and convert Markdown to HTML in real time.
+    •	Styling: Applied responsive and conditional styling with CSS and class toggling.
