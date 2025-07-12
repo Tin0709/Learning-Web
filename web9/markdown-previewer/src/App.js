@@ -16,14 +16,25 @@ Type Markdown on the left and see the HTML output on the right.
   `);
 
   const [showGuide, setShowGuide] = useState(false);
+  const [darkMode, setDarkMode] = useState(false);
+
+  React.useEffect(() => {
+    document.body.className = darkMode ? "dark" : "";
+    document.documentElement.className = darkMode ? "dark" : "";
+  }, [darkMode]);
 
   return (
-    <div className="app-container">
+    <div className={`app-container ${darkMode ? "dark" : ""}`}>
       <header>
         <h1>Markdown Previewer</h1>
-        <button onClick={() => setShowGuide(!showGuide)}>
-          {showGuide ? "Hide Guide" : "How to Use"}
-        </button>
+        <div className="header-buttons">
+          <button onClick={() => setShowGuide(!showGuide)}>
+            {showGuide ? "Hide Guide" : "How to Use"}
+          </button>
+          <button onClick={() => setDarkMode(!darkMode)}>
+            {darkMode ? "Light Mode" : "Dark Mode"}
+          </button>
+        </div>
       </header>
 
       {showGuide && (
