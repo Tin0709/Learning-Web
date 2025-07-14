@@ -1,7 +1,7 @@
 const canvas = document.getElementById("gameCanvas");
 const ctx = canvas.getContext("2d");
 
-const box = 20; // size of each square
+const box = 20;
 const canvasSize = 400;
 
 let snake = [{ x: 160, y: 160 }];
@@ -47,31 +47,32 @@ function draw() {
   if (direction === "UP") head.y -= box;
   if (direction === "DOWN") head.y += box;
 
-  // Game over (wall or self)
-  if (
-    head.x < 0 ||
-    head.x >= canvasSize ||
-    head.y < 0 ||
-    head.y >= canvasSize ||
-    snake.some((segment) => segment.x === head.x && segment.y === head.y)
-  ) {
+  // Wrap around edges
+  if (head.x < 0) head.x = canvasSize - box;
+  if (head.x >= canvasSize) head.x = 0;
+  if (head.y < 0) head.y = canvasSize - box;
+  if (head.y >= canvasSize) head.y = 0;
+
+  // Check collision with self
+  if (snake.some((segment) => segment.x === head.x && segment.y === head.y)) {
     alert("Game Over! Final Score: " + score);
     snake = [{ x: 160, y: 160 }];
     direction = "RIGHT";
     score = 0;
+    document.getElementById("score").textContent = "Score: 0";
     food = spawnFood();
     return;
   }
 
   snake.unshift(head);
 
-  // Eat food
+  // Check if food is eaten
   if (head.x === food.x && head.y === food.y) {
     food = spawnFood();
     score++;
     document.getElementById("score").textContent = "Score: " + score;
   } else {
-    snake.pop(); // Remove tail
+    snake.pop();
   }
 }
 
