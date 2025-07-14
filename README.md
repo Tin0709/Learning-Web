@@ -116,3 +116,8 @@ What I Learned From This Project:
     •	Props & Controlled Components: Passed and synced state between parent and child components.
     •	Third-party Integration: Used the marked library to parse and convert Markdown to HTML in real time.
     •	Styling: Applied responsive and conditional styling with CSS and class toggling.
+
+---
+
+web10 Case Study - calendar (html css js)
+Small and basic calendar with decent UI for warn up
