@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Simple Tailwind UI Web</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- External Styles -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="bg-gray-100 text-gray-900">
+    <!-- Navigation Bar -->
+    <nav class="bg-white shadow">
+      <div
+        class="container mx-auto px-4 py-4 flex justify-between items-center"
+      >
+        <div class="text-xl font-bold">MySite</div>
+        <div>
+          <a href="#home" class="px-3 py-2 hover:text-blue-500">Home</a>
+          <a href="#about" class="px-3 py-2 hover:text-blue-500">About</a>
+          <a href="#contact" class="px-3 py-2 hover:text-blue-500">Contact</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="container mx-auto px-4 py-20 text-center">
+      <h1 class="text-4xl font-extrabold mb-4">Welcome to MySite</h1>
+      <p class="text-lg mb-8">
+        This is a simple web page built with Tailwind CSS and plain JavaScript.
+      </p>
+      <button
+        id="ctaButton"
+        class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
+      >
+        Click Me!
+      </button>
+    </section>
+
+    <!-- Features Section -->
+    <section class="container mx-auto px-4 py-10">
+      <h2 class="text-2xl font-bold mb-6">Features</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-white shadow rounded-lg p-6">
+          <h3 class="text-xl font-semibold mb-2">Feature One</h3>
+          <p class="text-gray-700">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </p>
+        </div>
+        <div class="bg-white shadow rounded-lg p-6">
+          <h3 class="text-xl font-semibold mb-2">Feature Two</h3>
+          <p class="text-gray-700">
+            Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+        </div>
+        <div class="bg-white shadow rounded-lg p-6">
+          <h3 class="text-xl font-semibold mb-2">Feature Three</h3>
+          <p class="text-gray-700">
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white shadow mt-10">
+      <div class="container mx-auto px-4 py-4 text-center">
+        <p class="text-gray-600">&copy; 2025 MySite. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- External JavaScript -->
+    <script src="script.js"></script>
+  </body>
+</html>
