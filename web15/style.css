@@ -1,31 +1,43 @@
 body {
-  font-family: sans-serif;
-  text-align: center;
+  font-family: "Courier New", Courier, monospace;
   background: black;
-  color: yellow;
+  color: #ffd700;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  margin: 20px 0 10px;
+  font-size: 3rem;
+  color: #ffd700;
+  text-shadow: 2px 2px 4px #000;
 }
 
 .grid {
   display: grid;
   grid-template-columns: repeat(10, 40px);
-  width: 400px;
-  margin: 20px auto;
-  border: 3px solid yellow;
+  border: 4px solid yellow;
+  background: #0000cc;
+  box-shadow: 0 0 10px 3px yellow;
+  padding: 4px;
+  margin-bottom: 20px;
 }
 
 .square {
   width: 40px;
   height: 40px;
   box-sizing: border-box;
-  background: black;
 }
 
 .wall {
-  background: blue;
+  background-color: #000;
 }
 
 .pac-dot {
-  background: black;
+  background-color: transparent;
   position: relative;
 }
 
@@ -38,9 +50,12 @@ body {
   height: 8px;
   background: white;
   border-radius: 50%;
+  box-shadow: 0 0 5px white;
 }
 
 .pacman {
-  background: yellow;
+  background: #ffff00;
   border-radius: 50%;
+  box-shadow: 0 0 10px #ffff00;
+  transition: transform 0.1s ease;
 }
