@@ -6,13 +6,33 @@
 }
 body {
   font-family: "Segoe UI", sans-serif;
-  background: #111;
+  background: linear-gradient(
+    -45deg,
+    #5d7ab0,
+    hsl(96, 100%, 55%),
+    #00c9ff,
+    #92fe9d
+  );
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
   padding: 20px;
+}
+
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 main {
   text-align: center;
@@ -23,21 +43,10 @@ h1 {
 .button-grid {
   display: grid;
   gap: 20px;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  max-width: 800px;
+  margin: 0 auto;
 }
-.btn {
-  padding: 15px 25px;
-  border: none;
-  border-radius: 6px;
-  font-size: 16px;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  transition: all 0.3s ease;
-  background: #333;
-  color: white;
-}
-
 .btn {
   padding: 15px 25px;
   border: none;
@@ -50,7 +59,7 @@ h1 {
   color: white;
 }
 
-/* 1. Hover Slide (Diagonal Slide-In) */
+/* 1. Hover Slide */
 .btn-hover-slide {
   background: #222;
   z-index: 0;
@@ -72,11 +81,10 @@ h1 {
   left: 0;
 }
 
-/* 2. Press Grow with Lift Shadow */
+/* 2. Press Grow */
 .btn-press-grow {
   background: #2ecc71;
   box-shadow: 0 5px 15px rgba(46, 204, 113, 0.3);
-  transition: transform 0.2s, box-shadow 0.3s;
 }
 .btn-press-grow:hover {
   transform: scale(1.05);
@@ -86,12 +94,11 @@ h1 {
   transform: scale(0.95);
 }
 
-/* 3. Glowing Button (Enhanced Pulse on Hover) */
+/* 3. Glowing */
 .btn-glow {
   background: #8e44ad;
   box-shadow: 0 0 10px #8e44ad;
   animation: none;
-  transition: all 0.4s ease;
 }
 .btn-glow:hover {
   box-shadow: 0 0 20px #9b59b6, 0 0 40px #9b59b6;
@@ -109,12 +116,9 @@ h1 {
   }
 }
 
-/* 4. Ripple Button with Hover Pulse */
+/* 4. Ripple */
 .btn-ripple {
   background: #e74c3c;
-  position: relative;
-  overflow: hidden;
-  transition: background 0.3s ease;
 }
 .btn-ripple:hover {
   background: #c0392b;
@@ -133,22 +137,116 @@ h1 {
   }
 }
 
-/* 5. Gradient Flow with Text Glow */
+/* 5. Gradient Flow */
 .btn-gradient {
   background: linear-gradient(45deg, #f39c12, #d35400, #e74c3c);
   background-size: 200% 200%;
-  color: white;
-  transition: all 0.4s ease;
 }
 .btn-gradient:hover {
   background-position: 100% 0;
   box-shadow: 0 0 15px rgba(243, 156, 18, 0.6);
   text-shadow: 0 0 5px #fff;
 }
-.button-grid {
-  display: grid;
-  gap: 20px;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  max-width: 800px;
-  margin: 0 auto;
+
+/* 6. Border Fill */
+.btn-border-fill {
+  background: transparent;
+  border: 2px solid #00cec9;
+  color: #00cec9;
+}
+.btn-border-fill::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #00cec9;
+  z-index: -1;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+.btn-border-fill:hover::before {
+  transform: scaleX(1);
+}
+.btn-border-fill:hover {
+  color: #111;
+}
+
+/* 7. Slide Border */
+.btn-slide-border {
+  background: #222;
+  border: 2px solid transparent;
+}
+.btn-slide-border::before,
+.btn-slide-border::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: #e84393;
+  transition: 0.3s;
+}
+.btn-slide-border::before {
+  top: 0;
+  left: 0;
+}
+.btn-slide-border::after {
+  bottom: 0;
+  right: 0;
+}
+.btn-slide-border:hover::before,
+.btn-slide-border:hover::after {
+  width: 100%;
+}
+
+/* 8. Icon Slide */
+.btn-icon-slide {
+  background: #6c5ce7;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding-right: 20px;
+}
+.btn-icon-slide i {
+  transform: translateX(-10px);
+  opacity: 0;
+  transition: all 0.3s;
+}
+.btn-icon-slide:hover i {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* 9. Text Reveal */
+.btn-text-reveal {
+  background: #00b894;
+  color: transparent;
+  text-shadow: 0 0 0 white;
+}
+.btn-text-reveal::after {
+  content: "Text Reveal";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  color: white;
+  transition: left 0.4s ease;
+}
+.btn-text-reveal:hover::after {
+  left: 0;
+}
+
+/* 10. Flip */
+.btn-flip {
+  background: #fdcb6e;
+  color: black;
+  transform-style: preserve-3d;
+  transition: transform 0.4s;
+}
+.btn-flip:hover {
+  transform: rotateY(15deg);
 }
