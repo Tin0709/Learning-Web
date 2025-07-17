@@ -1,12 +1,15 @@
+// script.js
 const grid = document.getElementById("grid");
 const width = 10;
 const layout = [
   1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 1,
   1, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0,
-  0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0,
-  0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+  0, 0, 1, 1, 0, 1, 0, 1, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1,
+  0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
 ];
 
+let score = 0;
+const scoreDisplay = document.getElementById("score");
 const squares = [];
 
 function createBoard() {
@@ -69,6 +72,8 @@ function movePacman(e) {
   // Eat dot
   if (squares[pacmanCurrentIndex].classList.contains("pac-dot")) {
     squares[pacmanCurrentIndex].classList.remove("pac-dot");
+    score++;
+    scoreDisplay.textContent = `Score: ${score}`;
   }
 }
 
