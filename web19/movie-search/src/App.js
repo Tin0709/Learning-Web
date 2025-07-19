@@ -8,6 +8,7 @@ import "./App.css";
 
 function App() {
   const [movies, setMovies] = useState([]);
+  const [darkMode, setDarkMode] = useState(false);
 
   const searchMovies = async (query) => {
     const res = await axios.get(
@@ -18,8 +19,17 @@ function App() {
 
   return (
     <Router>
-      <div className="app-container">
-        <h1>🎬 Movie Search App</h1>
+      <div className={`app-container ${darkMode ? "dark" : "light"}`}>
+        <header className="app-header">
+          <h1 className="app-title">🎬 Movie Search App</h1>
+          <button
+            onClick={() => setDarkMode(!darkMode)}
+            className="dark-toggle"
+          >
+            {darkMode ? "☀ Light Mode" : "🌙 Dark Mode"}
+          </button>
+        </header>
+
         <Routes>
           <Route
             path="/"
