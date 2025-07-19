@@ -7,10 +7,11 @@ const MovieList = ({ movies }) => {
   return (
     <div
       style={{
-        display: "flex",
-        flexWrap: "wrap",
-        justifyContent: "center",
-        gap: "1rem",
+        display: "grid",
+        gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))",
+        gap: "1.5rem",
+        padding: "2rem 0",
+        justifyItems: "center",
       }}
     >
       {movies.map((movie) => (

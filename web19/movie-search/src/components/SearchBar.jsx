@@ -19,15 +19,11 @@ const SearchBar = ({ onSearch }) => {
         );
         setSuggestions(res.data.Search || []);
       } catch (error) {
-        console.error("Error fetching suggestions:", error);
         setSuggestions([]);
       }
     };
 
-    const delayDebounce = setTimeout(() => {
-      fetchSuggestions();
-    }, 400); // debounce
-
+    const delayDebounce = setTimeout(fetchSuggestions, 400);
     return () => clearTimeout(delayDebounce);
   }, [query]);
 
@@ -45,7 +41,9 @@ const SearchBar = ({ onSearch }) => {
   };
 
   return (
-    <div style={{ position: "relative", maxWidth: "400px", margin: "auto" }}>
+    <div
+      style={{ position: "relative", maxWidth: "500px", margin: "0 auto 2rem" }}
+    >
       <form onSubmit={handleSubmit} style={{ display: "flex" }}>
         <input
           type="text"
@@ -56,21 +54,22 @@ const SearchBar = ({ onSearch }) => {
             setShowSuggestions(true);
           }}
           style={{
-            padding: "0.5rem",
+            padding: "0.6rem 1rem",
             flex: 1,
-            border: "2px solid #007BFF",
-            borderRadius: "4px 0 0 4px",
+            border: "1px solid #ccc",
+            borderRadius: "6px 0 0 6px",
             fontSize: "16px",
+            boxShadow: "0 1px 4px rgba(0,0,0,0.1)",
           }}
         />
         <button
           type="submit"
           style={{
-            padding: "0.5rem 1rem",
-            border: "1px solid #007BFF",
+            padding: "0.6rem 1rem",
             backgroundColor: "#007BFF",
             color: "white",
-            borderRadius: "0 4px 4px 0",
+            border: "none",
+            borderRadius: "0 6px 6px 0",
             cursor: "pointer",
           }}
         >
@@ -83,14 +82,14 @@ const SearchBar = ({ onSearch }) => {
           style={{
             position: "absolute",
             width: "100%",
-            backgroundColor: "white",
-            border: "1px solid #ccc",
+            backgroundColor: "#fff",
+            border: "1px solid #ddd",
+            borderTop: "none",
             listStyle: "none",
             margin: 0,
-            padding: "0.5rem 0",
-            maxHeight: "200px",
-            overflowY: "auto",
-            zIndex: 1000,
+            padding: 0,
+            boxShadow: "0 4px 8px rgba(0,0,0,0.05)",
+            zIndex: 10,
           }}
         >
           {suggestions.map((movie) => (
@@ -98,7 +97,7 @@ const SearchBar = ({ onSearch }) => {
               key={movie.imdbID}
               onClick={() => handleSuggestionClick(movie.Title)}
               style={{
-                padding: "0.5rem 1rem",
+                padding: "0.75rem 1rem",
                 cursor: "pointer",
                 borderBottom: "1px solid #eee",
               }}

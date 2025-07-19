@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import SearchBar from "./components/SearchBar";
 import MovieList from "./components/MovieList";
+import "./App.css";
 
 const App = () => {
   const [movies, setMovies] = useState([]);
@@ -15,7 +16,7 @@ const App = () => {
   };
 
   return (
-    <div style={{ padding: "2rem", textAlign: "center" }}>
+    <div className="app-container">
       <h1>🎬 Movie Search App</h1>
       <SearchBar onSearch={searchMovies} />
       <MovieList movies={movies} />
