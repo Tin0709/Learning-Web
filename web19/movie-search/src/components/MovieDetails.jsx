@@ -20,18 +20,30 @@ const MovieDetails = () => {
   if (!movie) return <p>Loading...</p>;
 
   return (
-    <div
-      style={{
-        padding: "2rem",
-        textAlign: "left",
-        maxWidth: "800px",
-        margin: "auto",
-      }}
-    >
-      <Link to="/" style={{ display: "inline-block", marginBottom: "1rem" }}>
+    <div style={{ padding: "2rem", maxWidth: "1000px", margin: "auto" }}>
+      <Link
+        to="/"
+        style={{
+          textDecoration: "none",
+          color: "#007BFF",
+          marginBottom: "1rem",
+          display: "inline-block",
+        }}
+      >
         ← Back to search
       </Link>
-      <div style={{ display: "flex", gap: "2rem" }}>
+
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          flexWrap: "wrap",
+          background: "#fff",
+          borderRadius: "12px",
+          boxShadow: "0 4px 20px rgba(0,0,0,0.1)",
+          overflow: "hidden",
+        }}
+      >
         <img
           src={
             movie.Poster !== "N/A"
@@ -39,10 +51,17 @@ const MovieDetails = () => {
               : "https://via.placeholder.com/300x450?text=No+Image"
           }
           alt={movie.Title}
-          style={{ width: "300px", borderRadius: "8px" }}
+          style={{
+            width: "100%",
+            maxWidth: "300px",
+            objectFit: "cover",
+            height: "100%",
+            backgroundColor: "#eee",
+          }}
         />
-        <div>
-          <h2>
+
+        <div style={{ padding: "2rem", flex: 1 }}>
+          <h2 style={{ marginTop: 0 }}>
             {movie.Title} ({movie.Year})
           </h2>
           <p>
@@ -58,7 +77,7 @@ const MovieDetails = () => {
             <strong>Plot:</strong> {movie.Plot}
           </p>
           <p>
-            <strong>IMDb Rating:</strong> {movie.imdbRating}
+            <strong>IMDb Rating:</strong> ⭐ {movie.imdbRating}
           </p>
         </div>
       </div>
