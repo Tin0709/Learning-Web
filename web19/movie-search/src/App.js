@@ -1,14 +1,15 @@
 import React, { useState } from "react";
-import axios from "axios";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import SearchBar from "./components/SearchBar";
 import MovieList from "./components/MovieList";
+import MovieDetails from "./components/MovieDetails";
+import axios from "axios";
 import "./App.css";
 
-const App = () => {
+function App() {
   const [movies, setMovies] = useState([]);
 
   const searchMovies = async (query) => {
-    if (!query) return;
     const res = await axios.get(
       `https://www.omdbapi.com/?apikey=${process.env.REACT_APP_OMDB_API_KEY}&s=${query}`
     );
@@ -16,12 +17,24 @@ const App = () => {
   };
 
   return (
-    <div className="app-container">
-      <h1>🎬 Movie Search App</h1>
-      <SearchBar onSearch={searchMovies} />
-      <MovieList movies={movies} />
-    </div>
+    <Router>
+      <div className="app-container">
+        <h1>🎬 Movie Search App</h1>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <SearchBar onSearch={searchMovies} />
+                <MovieList movies={movies} />
+              </>
+            }
+          />
+          <Route path="/movie/:id" element={<MovieDetails />} />
+        </Routes>
+      </div>
+    </Router>
   );
-};
+}
 
 export default App;
