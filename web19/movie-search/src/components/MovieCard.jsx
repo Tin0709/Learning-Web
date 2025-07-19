@@ -6,16 +6,7 @@ const MovieCard = ({ movie }) => (
     to={`/movie/${movie.imdbID}`}
     style={{ textDecoration: "none", color: "inherit" }}
   >
-    <div
-      style={{
-        width: "200px",
-        backgroundColor: "white",
-        borderRadius: "8px",
-        boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
-        overflow: "hidden",
-        transition: "transform 0.2s",
-      }}
-    >
+    <div className="movie-card">
       <img
         src={
           movie.Poster !== "N/A"
@@ -23,11 +14,11 @@ const MovieCard = ({ movie }) => (
             : "https://via.placeholder.com/200x300?text=No+Image"
         }
         alt={movie.Title}
-        style={{ width: "100%", height: "300px", objectFit: "cover" }}
+        className="movie-poster"
       />
-      <div style={{ padding: "0.75rem" }}>
-        <h4 style={{ margin: "0 0 0.5rem" }}>{movie.Title}</h4>
-        <p style={{ margin: 0, color: "#666" }}>{movie.Year}</p>
+      <div className="movie-info">
+        <h4 className="movie-title">{movie.Title}</h4>
+        <p className="movie-year">{movie.Year}</p>
       </div>
     </div>
   </Link>
