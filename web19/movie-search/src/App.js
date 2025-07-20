@@ -50,7 +50,7 @@ function App() {
               <>
                 <SearchBar onSearch={searchMovies} />
                 {loading ? (
-                  <p className="loading">Loading...</p>
+                  <div className="spinner"></div>
                 ) : error ? (
                   <p className="error">{error}</p>
                 ) : movies.length > 0 ? (

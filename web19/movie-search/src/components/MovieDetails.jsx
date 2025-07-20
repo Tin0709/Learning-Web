@@ -17,7 +17,9 @@ const MovieDetails = () => {
     fetchMovieDetails();
   }, [id]);
 
-  if (!movie) return <p>Loading...</p>;
+  if (!movie) {
+    return <div className="spinner"></div>;
+  }
 
   return (
     <div className="details-wrapper">
