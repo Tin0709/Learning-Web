@@ -49,9 +49,15 @@ function App() {
             element={
               <>
                 <SearchBar onSearch={searchMovies} />
-                {loading && <p className="loading">Loading...</p>}
-                {error && <p className="error">{error}</p>}
-                <MovieList movies={movies} />
+                {loading ? (
+                  <p className="loading">Loading...</p>
+                ) : error ? (
+                  <p className="error">{error}</p>
+                ) : movies.length > 0 ? (
+                  <MovieList movies={movies} />
+                ) : (
+                  <p className="empty">No movies found.</p>
+                )}
               </>
             }
           />
