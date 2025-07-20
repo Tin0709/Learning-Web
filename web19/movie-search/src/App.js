@@ -8,13 +8,26 @@ import "./App.css";
 
 function App() {
   const [movies, setMovies] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
   const [darkMode, setDarkMode] = useState(false);
 
   const searchMovies = async (query) => {
-    const res = await axios.get(
-      `https://www.omdbapi.com/?apikey=${process.env.REACT_APP_OMDB_API_KEY}&s=${query}`
-    );
-    setMovies(res.data.Search || []);
+    setLoading(true);
+    setError(null);
+    try {
+      const res = await axios.get(
+        `https://www.omdbapi.com/?apikey=${process.env.REACT_APP_OMDB_API_KEY}&s=${query}`
+      );
+      setMovies(res.data.Search || []);
+      if (!res.data.Search) {
+        setError("No movies found.");
+      }
+    } catch (err) {
+      setError("Failed to fetch movies.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -36,6 +49,8 @@ function App() {
             element={
               <>
                 <SearchBar onSearch={searchMovies} />
+                {loading && <p className="loading">Loading...</p>}
+                {error && <p className="error">{error}</p>}
                 <MovieList movies={movies} />
               </>
             }
