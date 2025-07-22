@@ -9,19 +9,25 @@ const Game = () => {
   const [result, setResult] = useState("");
 
   const playRound = (choice) => {
+    setPlayerChoice(null); // Reset to trigger animation
+    setComputerChoice(null);
+    setResult("");
+
     const compChoiceKey = Object.keys(choices)[Math.floor(Math.random() * 5)];
     const compChoice = choices[compChoiceKey];
 
-    setPlayerChoice(choices[choice]);
-    setComputerChoice(compChoice);
+    setTimeout(() => {
+      setPlayerChoice(choices[choice]);
+      setComputerChoice(compChoice);
 
-    if (choice === compChoiceKey) {
-      setResult("It's a tie!");
-    } else if (choices[choice].beats.includes(compChoiceKey)) {
-      setResult("You win!");
-    } else {
-      setResult("You lose!");
-    }
+      if (choice === compChoiceKey) {
+        setResult("It's a tie!");
+      } else if (choices[choice].beats.includes(compChoiceKey)) {
+        setResult("You win!");
+      } else {
+        setResult("You lose!");
+      }
+    }, 500); // 500ms delay
   };
 
   return (
