@@ -121,3 +121,17 @@ What I Learned From This Project:
 
 web10 Case Study - calendar (html css js)
 Small and basic calendar with decent UI for warn up
+
+---
+
+web24 Case Study - Note App (Express)
+
+to start the app -> node app.js
+
+I have learned:
+
+How to create a server with express()
+Define routes using app.get() and app.post()
+Use middleware like express.urlencoded() and express.static()
+Serve static files from the public/ folder
+Render dynamic pages with the EJS template engine
