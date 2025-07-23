@@ -2,18 +2,26 @@
 <html>
   <head>
     <title>My Notes</title>
+    <link rel="stylesheet" href="/style.css" />
   </head>
   <body>
-    <h1>My Notes</h1>
-    <form action="/notes" method="POST">
-      <input type="text" name="note" placeholder="Enter a note" required />
-      <button type="submit">Add Note</button>
-    </form>
-    <ul>
-      <% notes.forEach(function(note) { %>
-      <li><%= note %></li>
-      <% }); %>
-    </ul>
-    <a href="/">Back</a>
+    <div class="container">
+      <h1>📝 My Notes</h1>
+
+      <form action="/notes" method="POST" class="note-form">
+        <input type="text" name="note" placeholder="Enter a note..." required />
+        <button type="submit">Add</button>
+      </form>
+
+      <ul class="note-list">
+        <% if (notes.length === 0) { %>
+        <li class="empty">No notes yet.</li>
+        <% } else { %> <% notes.forEach(function(note, index) { %>
+        <li><%= note %></li>
+        <% }); %> <% } %>
+      </ul>
+
+      <a href="/" class="back-link">← Back to Home</a>
+    </div>
   </body>
 </html>
