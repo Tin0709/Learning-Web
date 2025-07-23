@@ -100,6 +100,17 @@ function handleNextButton() {
   }
 }
 
+function resetState() {
+  nextBtn.style.display = "none";
+  answerButtons.innerHTML = "";
+  questionEl.style.opacity = 0;
+  questionEl.classList.remove("fade-in");
+
+  setTimeout(() => {
+    questionEl.classList.add("fade-in");
+  }, 50);
+}
+
 nextBtn.addEventListener("click", () => {
   if (currentQuestionIndex < questions.length) {
     handleNextButton();
