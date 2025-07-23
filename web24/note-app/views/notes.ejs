@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Notes</title>
+  </head>
+  <body>
+    <h1>My Notes</h1>
+    <form action="/notes" method="POST">
+      <input type="text" name="note" placeholder="Enter a note" required />
+      <button type="submit">Add Note</button>
+    </form>
+    <ul>
+      <% notes.forEach(function(note) { %>
+      <li><%= note %></li>
+      <% }); %>
+    </ul>
+    <a href="/">Back</a>
+  </body>
+</html>
