@@ -7,9 +7,24 @@
   </head>
   <body>
     <div class="container">
+      <img src="/logo.png" alt="Note App Logo" class="logo" />
       <h1>📓 Welcome to Note App</h1>
       <p class="description">A simple app to write and manage your notes.</p>
       <a href="/notes" class="main-btn">Go to Notes</a>
     </div>
+
+    <div class="dark-toggle">
+      <label>
+        <input type="checkbox" id="darkModeToggle" />
+        🌙 Toggle Dark Mode
+      </label>
+    </div>
+
+    <script>
+      const toggle = document.getElementById("darkModeToggle");
+      toggle.addEventListener("change", () => {
+        document.body.classList.toggle("dark");
+      });
+    </script>
   </body>
 </html>

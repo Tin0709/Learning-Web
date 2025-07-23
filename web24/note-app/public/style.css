@@ -91,9 +91,54 @@ h1 {
   font-size: 16px;
   text-decoration: none;
   border-radius: 6px;
-  transition: background-color 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out, transform 0.2s ease;
+}
+.main-btn {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .main-btn:hover {
   background-color: #45a049;
+  transform: scale(1.05);
+}
+.logo {
+  width: 80px;
+  display: block;
+  margin: 0 auto 20px auto;
+}
+
+.dark {
+  background-color: #121212;
+  color: #eee;
+}
+
+.dark .container {
+  background-color: #1f1f1f;
+  color: #eee;
+}
+
+.dark .note-list li {
+  background-color: #2c2c2c;
+}
+
+.dark .main-btn {
+  background-color: #009688;
+}
+
+.dark .main-btn:hover {
+  background-color: #00796b;
+}
+
+.dark .back-link {
+  color: #80cbc4;
+}
+
+.dark .back-link:hover {
+  text-decoration: underline;
+}
+
+.dark-toggle {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 14px;
 }
