@@ -103,8 +103,13 @@ h1 {
 }
 .logo {
   width: 80px;
-  display: block;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  background-color: #ffffff;
+  padding: 10px;
   margin: 0 auto 20px auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .dark {
@@ -202,4 +207,12 @@ h1 {
 
 .switch input:checked + .slider::before {
   transform: translateX(24px);
+}
+.dark h1,
+.dark p,
+.dark .toggle-label {
+  color: #ffffff;
+}
+.dark .description {
+  color: #cccccc;
 }
