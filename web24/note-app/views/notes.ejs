@@ -23,5 +23,33 @@
 
       <a href="/" class="back-link">← Back to Home</a>
     </div>
+    <div class="dark-toggle">
+      <label class="switch">
+        <input type="checkbox" id="darkModeToggle" />
+        <span class="slider"></span>
+      </label>
+      <span class="toggle-label">🌙 Dark Mode</span>
+    </div>
+
+    <script>
+      const toggle = document.getElementById("darkModeToggle");
+
+      if (localStorage.getItem("darkMode") === "enabled") {
+        document.body.classList.add("dark");
+        if (toggle) toggle.checked = true;
+      }
+
+      if (toggle) {
+        toggle.addEventListener("change", () => {
+          if (toggle.checked) {
+            document.body.classList.add("dark");
+            localStorage.setItem("darkMode", "enabled");
+          } else {
+            document.body.classList.remove("dark");
+            localStorage.setItem("darkMode", "disabled");
+          }
+        });
+      }
+    </script>
   </body>
 </html>
