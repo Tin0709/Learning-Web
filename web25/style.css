@@ -1,60 +1,129 @@
+/* Reset and base */
 body {
-  font-family: sans-serif;
-  background-color: #f4f4f4;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f2f5;
   margin: 0;
   padding: 20px;
 }
 
+/* Container */
 .container {
   max-width: 500px;
   margin: auto;
-  background: white;
-  padding: 20px;
-  border-radius: 8px;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+/* Header */
+.container h1 {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 28px;
 }
 
 .balance {
   text-align: center;
-  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 10px 0 20px;
 }
 
 .summary {
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 16px;
 }
 
+/* Form */
 form {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  margin-bottom: 20px;
 }
 
+form input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: border-color 0.2s ease-in-out;
+}
+
+form input:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+form button {
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+form button:hover {
+  background-color: #0056b3;
+}
+
+/* Transactions */
 .transactions {
   list-style: none;
   padding: 0;
 }
 
 .transactions li {
-  background: #eee;
-  padding: 10px;
-  margin: 5px 0;
-  position: relative;
+  background: #f7f7f7;
+  padding: 12px 14px;
+  margin-bottom: 10px;
+  border-right: 6px solid;
+  border-radius: 6px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  animation: fadeIn 0.4s ease forwards;
 }
 
 .transactions li.income {
-  border-right: 5px solid green;
+  border-color: #28a745;
 }
 
 .transactions li.expense {
-  border-right: 5px solid red;
+  border-color: #dc3545;
 }
 
 .delete-btn {
   background: none;
   border: none;
-  color: red;
+  color: #dc3545;
+  font-weight: bold;
+  font-size: 18px;
   cursor: pointer;
+  padding: 0;
+  transition: transform 0.2s;
+}
+
+.delete-btn:hover {
+  transform: scale(1.2);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
