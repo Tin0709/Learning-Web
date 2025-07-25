@@ -127,3 +127,14 @@ form button:hover {
     transform: translateY(0);
   }
 }
+
+.fade-out {
+  animation: fadeOut 0.4s ease forwards;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+}
