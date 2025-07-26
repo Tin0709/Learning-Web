@@ -1,0 +1,26 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  display: flex;
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+}
+
+textarea, #preview {
+  width: 50%;
+  padding: 1rem;
+  font-size: 1rem;
+  border: none;
+  outline: none;
+  resize: none;
+  overflow-y: auto;
+}
+
+#preview {
+  background-color: #f4f4f4;
+  border-left: 1px solid #ccc;
+}
