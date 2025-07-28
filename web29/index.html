@@ -31,6 +31,7 @@
     <div id="stats">
       <p><strong>Time:</strong> <span id="time">0.0</span> seconds</p>
       <p><strong>Keystrokes:</strong> <span id="keystrokes">0</span></p>
+      <p><strong>Words:</strong> <span id="words">0</span></p>
       <p><strong>WPM:</strong> <span id="wpm">0</span></p>
       <p><strong>Highest WPM:</strong> <span id="highWpm">0</span></p>
     </div>
@@ -47,6 +48,7 @@
       const keystrokeDisplay = document.getElementById("keystrokes");
       const wpmDisplay = document.getElementById("wpm");
       const highWpmDisplay = document.getElementById("highWpm");
+      const wordsDisplay = document.getElementById("words");
 
       typingBox.addEventListener("input", () => {
         const now = performance.now();
@@ -64,13 +66,14 @@
         if (!isActive || !startTime) return;
 
         const elapsed = (performance.now() - startTime) / 1000;
-
         if (elapsed === 0) return;
 
         const wpm = keystrokes / 5 / (elapsed / 60);
+        const wordsTyped = countWords(typingBox.value);
 
         timeDisplay.textContent = elapsed.toFixed(1);
         keystrokeDisplay.textContent = keystrokes;
+        wordsDisplay.textContent = wordsTyped;
 
         if (isFinite(wpm)) {
           const roundedWPM = Math.round(wpm);
@@ -83,10 +86,13 @@
         }
       }
 
-      // Inactivity checker – stops calculation if no input after .1 second
+      function countWords(text) {
+        return text.trim().split(/\s+/).filter(Boolean).length;
+      }
+
       setInterval(() => {
         const now = performance.now();
-        if (lastInputTime && now - lastInputTime > 100) {
+        if (lastInputTime && now - lastInputTime > 1000) {
           isActive = false;
         }
 
