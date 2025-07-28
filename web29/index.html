@@ -39,6 +39,8 @@
       let startTime = null;
       let keystrokes = 0;
       let highestWPM = 0;
+      let lastInputTime = null;
+      let isActive = false;
 
       const typingBox = document.getElementById("typingBox");
       const timeDisplay = document.getElementById("time");
@@ -47,17 +49,25 @@
       const highWpmDisplay = document.getElementById("highWpm");
 
       typingBox.addEventListener("input", () => {
-        if (!startTime) startTime = performance.now();
+        const now = performance.now();
+
+        if (!startTime) startTime = now;
+
         keystrokes++;
+        lastInputTime = now;
+        isActive = true;
+
         updateStats();
       });
 
       function updateStats() {
+        if (!isActive || !startTime) return;
+
         const elapsed = (performance.now() - startTime) / 1000;
 
-        if (elapsed === 0) return; // Avoid division by zero
+        if (elapsed === 0) return;
 
-        const wpm = keystrokes / 5 / (elapsed / 60); // 5 keystrokes per word
+        const wpm = keystrokes / 5 / (elapsed / 60);
 
         timeDisplay.textContent = elapsed.toFixed(1);
         keystrokeDisplay.textContent = keystrokes;
@@ -73,9 +83,16 @@
         }
       }
 
-      // Update stats continuously (optional)
+      // Inactivity checker – stops calculation if no input after .1 second
       setInterval(() => {
-        if (startTime) updateStats();
+        const now = performance.now();
+        if (lastInputTime && now - lastInputTime > 100) {
+          isActive = false;
+        }
+
+        if (isActive) {
+          updateStats();
+        }
       }, 100);
     </script>
   </body>
