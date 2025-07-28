@@ -32,15 +32,19 @@
       <p><strong>Time:</strong> <span id="time">0.0</span> seconds</p>
       <p><strong>Keystrokes:</strong> <span id="keystrokes">0</span></p>
       <p><strong>WPM:</strong> <span id="wpm">0</span></p>
+      <p><strong>Highest WPM:</strong> <span id="highWpm">0</span></p>
     </div>
 
     <script>
       let startTime = null;
       let keystrokes = 0;
+      let highestWPM = 0;
+
       const typingBox = document.getElementById("typingBox");
       const timeDisplay = document.getElementById("time");
       const keystrokeDisplay = document.getElementById("keystrokes");
       const wpmDisplay = document.getElementById("wpm");
+      const highWpmDisplay = document.getElementById("highWpm");
 
       typingBox.addEventListener("input", () => {
         if (!startTime) startTime = performance.now();
@@ -55,6 +59,11 @@
         timeDisplay.textContent = elapsed.toFixed(1);
         keystrokeDisplay.textContent = keystrokes;
         wpmDisplay.textContent = isFinite(wpm) ? Math.round(wpm) : 0;
+
+        if (wpm > highestWPM) {
+          highestWPM = wpm;
+          highWpmDisplay.textContent = Math.round(highestWPM);
+        }
       }
 
       // Optional: update stats even if input stops
