@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <aside class="sidebar">
+        <h2>Dashboard</h2>
+        <ul>
+          <li>Overview</li>
+          <li>Sales</li>
+          <li>Users</li>
+          <li>Settings</li>
+        </ul>
+      </aside>
+      <main class="main">
+        <header>
+          <h1>Analytics Overview</h1>
+          <select id="date-range">
+            <option>Last 7 Days</option>
+            <option>Last 30 Days</option>
+            <option>This Year</option>
+          </select>
+        </header>
+        <section class="cards">
+          <div class="card">Sales: $12,430</div>
+          <div class="card">Users: 1,203</div>
+          <div class="card">Revenue: $32,500</div>
+        </section>
+        <section class="chart-section">
+          <canvas id="salesChart"></canvas>
+        </section>
+      </main>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
