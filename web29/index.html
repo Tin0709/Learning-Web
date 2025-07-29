@@ -102,8 +102,11 @@
         const elapsed = (performance.now() - startTime) / 1000;
         if (elapsed === 0) return;
 
-        const wordsTyped = countWords(typingBox.value);
-        const wpm = wordsTyped / (elapsed / 60);
+        const rawText = typingBox.value;
+        const characterCount = rawText.replace(/\s/g, "").length;
+        const wordsTyped = countWords(rawText);
+        const elapsedMinutes = elapsed / 60;
+        const wpm = characterCount / 5 / elapsedMinutes;
 
         timeDisplay.textContent = elapsed.toFixed(1);
         keystrokeDisplay.textContent = keystrokes;
