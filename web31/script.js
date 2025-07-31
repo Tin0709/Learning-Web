@@ -2,6 +2,22 @@ const chatBox = document.getElementById('chat-box');
 const input = document.getElementById('message-input');
 const sendBtn = document.getElementById('send-btn');
 
+
+const toggleBtn = document.getElementById('toggle-theme');
+
+// Check localStorage for saved theme
+if (localStorage.getItem('theme') === 'dark') {
+  document.body.classList.add('dark-mode');
+  toggleBtn.textContent = '☀️';
+}
+
+toggleBtn.addEventListener('click', () => {
+  document.body.classList.toggle('dark-mode');
+  const isDark = document.body.classList.contains('dark-mode');
+  toggleBtn.textContent = isDark ? '☀️' : '🌙';
+  localStorage.setItem('theme', isDark ? 'dark' : 'light');
+});
+
 const botReplies = [
   "Hello!",
   "How can I help you?",
