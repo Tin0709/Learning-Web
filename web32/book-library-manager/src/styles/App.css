@@ -11,28 +11,54 @@ nav {
   border-bottom: 1px solid #ddd;
   padding: 1rem 2rem;
   display: flex;
-  gap: 1rem;
+  gap: 1.5rem;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 nav a {
   color: #0077cc;
   text-decoration: none;
   font-weight: 500;
+  font-size: 1rem;
 }
 
 nav a:hover {
   text-decoration: underline;
 }
 
-h2 {
-  padding: 1rem 2rem;
-  margin: 0;
+.container {
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 0 1.5rem;
 }
 
-.container {
+h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #222;
+}
+
+.empty-state {
+  background-color: #fff;
   padding: 2rem;
-  max-width: 800px;
-  margin: auto;
+  border: 2px dashed #ccc;
+  border-radius: 8px;
+  text-align: center;
+  color: #666;
+  font-style: italic;
+}
+
+.book-card {
+  background-color: white;
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.05);
 }
 
 form {
@@ -60,17 +86,9 @@ button {
   color: white;
   border: none;
   cursor: pointer;
+  font-weight: bold;
 }
 
 button:hover {
   background-color: #005fa3;
-}
-
-.book-card {
-  background-color: white;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  border-radius: 6px;
-  border: 1px solid #ddd;
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.05);
 }
