@@ -31,22 +31,34 @@ export default function BookForm() {
     <form onSubmit={handleSubmit}>
       <input
         name="title"
-        placeholder="Title"
+        placeholder="Book Title"
+        value={form.title}
         onChange={handleChange}
         required
       />
       <input
         name="author"
         placeholder="Author"
+        value={form.author}
         onChange={handleChange}
         required
       />
-      <input name="genre" placeholder="Genre" onChange={handleChange} />
-      <select name="status" onChange={handleChange}>
+      <input
+        name="genre"
+        placeholder="Genre"
+        value={form.genre}
+        onChange={handleChange}
+      />
+      <select name="status" value={form.status} onChange={handleChange}>
         <option value="Unread">Unread</option>
         <option value="Read">Read</option>
       </select>
-      <textarea name="notes" placeholder="Notes" onChange={handleChange} />
+      <textarea
+        name="notes"
+        placeholder="Notes"
+        value={form.notes}
+        onChange={handleChange}
+      />
       <button type="submit">Add Book</button>
     </form>
   );
