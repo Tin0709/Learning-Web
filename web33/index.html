@@ -5,14 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Blog</title>
     <link rel="stylesheet" href="style.css" />
+
+    <!-- ✅ Include the Markdown parser -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <script src="script.js" defer></script>
   </head>
   <body>
     <div class="container">
       <h1>My Blog</h1>
+
+      <!-- Post list will be rendered here -->
       <div id="post-list"></div>
+
+      <!-- Post content will be shown here -->
       <div id="post-content"></div>
     </div>
-
-    <script src="script.js"></script>
   </body>
 </html>
