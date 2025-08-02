@@ -1,0 +1,29 @@
+body {
+  font-family: sans-serif;
+  background: #f9f9f9;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+}
+
+#post-list {
+  margin-bottom: 40px;
+}
+
+.post-title {
+  cursor: pointer;
+  margin: 10px 0;
+  color: blue;
+  text-decoration: underline;
+}
+
+#post-content {
+  border-top: 1px solid #ddd;
+  padding-top: 20px;
+}
