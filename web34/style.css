@@ -1,3 +1,7 @@
+* {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background: #f1f3f6;
@@ -160,4 +164,36 @@ body.dark-mode .toggle-dark {
   flex-direction: column;
   align-items: center;
   margin-bottom: 20px;
+}
+
+.entry:hover {
+  background: #f1f1f1;
+  transform: scale(1.01);
+  transition: all 0.2s ease;
+}
+body.dark-mode .entry:hover {
+  background: #333;
+}
+
+h2 {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 22px;
+  color: #555;
+}
+body.dark-mode h2 {
+  color: #ccc;
+}
+.toggle-dark:hover {
+  background: #bbb;
+}
+body.dark-mode .toggle-dark:hover {
+  background: #555;
+}
+
+.entry {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+body.dark-mode .entry {
+  box-shadow: 0 2px 10px rgba(255, 255, 255, 0.05);
 }

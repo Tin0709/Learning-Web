@@ -54,6 +54,7 @@ const isDark = localStorage.getItem("darkMode") === "true";
 if (isDark) {
   document.body.classList.add("dark-mode");
 }
+updateDarkToggleText();
 
 darkToggle.addEventListener("click", () => {
   document.body.classList.toggle("dark-mode");
@@ -61,4 +62,11 @@ darkToggle.addEventListener("click", () => {
     "darkMode",
     document.body.classList.contains("dark-mode")
   );
+  updateDarkToggleText(); // ← This updates the label on toggle
 });
+
+function updateDarkToggleText() {
+  darkToggle.textContent = document.body.classList.contains("dark-mode")
+    ? "☀️ Light Mode"
+    : "🌙 Dark Mode";
+}
