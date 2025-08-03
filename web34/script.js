@@ -15,10 +15,11 @@ function renderEntries() {
     li.className = "entry";
 
     li.innerHTML = `
-      <div class="entry-title">${entry.title}</div>
-      <div class="entry-content">${entry.content}</div>
-      <button class="delete-btn" onclick="deleteEntry(${index})">Delete</button>
-    `;
+  <div class="entry-title">${entry.title}</div>
+  <div class="entry-date">${new Date(entry.date).toLocaleString()}</div>
+  <div class="entry-content">${entry.content}</div>
+  <button class="delete-btn" onclick="deleteEntry(${index})">Delete</button>
+`;
 
     entriesList.appendChild(li);
   });
