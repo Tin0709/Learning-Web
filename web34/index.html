@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daily Journal</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>📝 Daily Journal</h1>
+
+      <form id="journal-form">
+        <input type="text" id="title" placeholder="Title" required />
+        <textarea
+          id="content"
+          placeholder="What's on your mind?"
+          required
+        ></textarea>
+        <button type="submit">Add Entry</button>
+      </form>
+
+      <h2>Your Entries</h2>
+      <ul id="entries-list"></ul>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
