@@ -141,3 +141,15 @@ body.dark-mode .toggle-dark {
   border-radius: 6px;
   cursor: pointer;
 }
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.button-group button {
+  width: auto;
+  min-width: 150px;
+  text-align: center;
+}

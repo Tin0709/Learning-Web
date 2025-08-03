@@ -9,7 +9,11 @@
   <body>
     <div class="container">
       <h1>📝 Daily Journal</h1>
-      <button id="toggle-dark" class="toggle-dark">🌙 Toggle Dark Mode</button>
+      <div class="button-group">
+        <button id="toggle-dark" class="toggle-dark">
+          🌙 Toggle Dark Mode
+        </button>
+      </div>
 
       <form id="journal-form">
         <input type="text" id="title" placeholder="Title" required />
@@ -18,7 +22,9 @@
           placeholder="What's on your mind?"
           required
         ></textarea>
-        <button type="submit">Add Entry</button>
+        <div class="button-group">
+          <button type="submit">Add Entry</button>
+        </div>
       </form>
 
       <h2>Your Entries</h2>
